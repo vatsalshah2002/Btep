@@ -4,7 +4,7 @@ import Navigation from './Customer/components/Navigation/Navigation';
 //import HomePage from './Customer/pages/HomePage/HomePage';
 //import Product from './Customer/components/Product/Product';
 import Cart from './Customer/components/Cart/Cart';
-import Footer from './customer/Components/footer/Footer';
+import Footer from './Customer/Components/footer/Footer';
 
 //import Checkout from './Customer/components/Checkout/Checkout';
 
