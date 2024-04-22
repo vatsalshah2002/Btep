@@ -9,6 +9,7 @@ import { removeCartItem, updateCartItem } from "../../../Redux/Customer/Cart/Act
 const CartItem = ({item}) => {
 
   const dispatch = useDispatch();
+  
   const handleUpdateCartItem = (num) => {
     const data={data:{quantity:item.quantity+num}, cartItemId:item?.id}
     dispatch(updateCartItem(data));

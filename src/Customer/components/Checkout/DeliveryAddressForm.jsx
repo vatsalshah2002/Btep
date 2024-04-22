@@ -4,6 +4,7 @@ import AddressCard from "../AddressCard/AddressCard";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createOrder } from "../../../Redux/Customer/Order/Action";
+import { useState } from "react";
 
 const DeliveryAddressForm = () => {
     const navigate = useNavigate();
@@ -66,7 +67,7 @@ const DeliveryAddressForm = () => {
                 </Grid>
                 <Grid item xs={12} lg={7}>
                     <Box className="border rounded-s-md shadow-md p-5">
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             <Grid container spacing={3}>
                                 <Grid item xs={12} sm={6}>
 
@@ -106,6 +107,45 @@ const DeliveryAddressForm = () => {
                                         rows={4}
                                     />
 
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <TextField
+                                        required
+                                        id="city"
+                                        name="city"
+                                        label="City"
+                                        fullWidth
+                                        autoComplete="shipping address-level2"
+                                    />
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <TextField
+                                        required
+                                        id="state"
+                                        name="state"
+                                        label="State/Province/Region"
+                                        fullWidth
+                                    />
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <TextField
+                                        required
+                                        id="zip"
+                                        name="zip"
+                                        label="Zip / Postal code"
+                                        fullWidth
+                                        autoComplete="shipping postal-code"
+                                    />
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <TextField
+                                        required
+                                        id="phoneNumber"
+                                        name="phoneNumber"
+                                        label="Phone Number"
+                                        fullWidth
+                                        autoComplete="tel"
+                                    />
                                 </Grid>
                             </Grid>
                         </form>
