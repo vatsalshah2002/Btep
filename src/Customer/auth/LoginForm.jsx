@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Grid, TextField, Button, Box, Snackbar, Alert, MenuItem, Select, InputLabel, FormControl } from "@mui/material";
+import { Grid, TextField, Button, Snackbar, Alert } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -9,6 +9,8 @@ const LoginForm = () => {
   const dispatch=useDispatch();
   const { auth } = useSelector((store) => store);
   const jwt=localStorage.getItem("jwt");
+  const [openSnackBar,setOpenSnackBar]=useState(false);
+  const handleCloseSnakbar=()=>setOpenSnackBar(false);
 
   useEffect(()=>{
     if(jwt){
@@ -46,18 +48,7 @@ const LoginForm = () => {
               </Grid>
               
             <Grid item xs={12}>
-            <FormControl fullWidth>
-            <InputLabel id="demo-simple-select-label">Role</InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              label="Role"
-              name="role"
-            >
-              <MenuItem value={"ROLE_ADMIN"}>Admin</MenuItem>
-              <MenuItem value={"ROLE_CUSTOMER"}>Customer</MenuItem>
-            </Select>
-          </FormControl>
+          
             </Grid>
               <Grid item xs={12}>
                 <TextField
@@ -93,7 +84,11 @@ const LoginForm = () => {
             </Button>
           </div>
     </div>
-    
+    <Snackbar open={openSnackBar} autoHideDuration={6000} onClose={handleCloseSnakbar}>
+        <Alert onClose={handleCloseSnakbar} severity="success" sx={{ width: '100%' }}>
+          {auth.error?auth.error:auth.user?"Register Success":""}
+        </Alert>
+      </Snackbar>
     
          
         </div>

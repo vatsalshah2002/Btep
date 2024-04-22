@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Grid, TextField, Button, Box, Snackbar, Alert, MenuItem, Select, InputLabel, FormControl } from "@mui/material";
+import { Grid, TextField, Button, Snackbar, Alert, MenuItem, Select, InputLabel, FormControl } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "../../Redux/Auth/Action";
@@ -10,15 +10,20 @@ const RegisterForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const jwt = localStorage.getItem("jwt");
+  const [openSnackBar,setOpenSnackBar]=useState(false);
   const { auth } = useSelector((store) => store);
+  const handleClose=()=>setOpenSnackBar(false);
 
   // Effect hook to dispatch an action to get user data if JWT token is present
   useEffect(() => {
     if (jwt) {
-      dispatch(getUser)
+      dispatch(getUser(jwt))
     }
   }, [jwt, auth.jwt])
 
+  useEffect(() => {
+    if (auth.user || auth.error) setOpenSnackBar(true)
+  }, [auth.user]);
 
 
   const handleSubmit = (event) => {
@@ -120,6 +125,12 @@ const RegisterForm = () => {
           </Button>
         </div>
       </div>
+
+      <Snackbar open={openSnackBar} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+          {auth.error?auth.error:auth.user?"Register Success":""}
+        </Alert>
+      </Snackbar>
 
       
     </div>
