@@ -10,7 +10,7 @@ import {
   GET_USER_SUCCESS,
   GET_USER_FAILURE,
   LOGOUT
-} from './ActionTypes';
+} from './ActionType';
 import api, { API_BASE_URL } from '../../config/api';
 
 // Register action creators

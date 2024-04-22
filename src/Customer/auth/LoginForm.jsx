@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { Grid, TextField, Button, Snackbar, Alert } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { getUser, login } from "../../Redux/Auth/Action";
 
 const LoginForm = () => {
 
@@ -28,7 +30,7 @@ const LoginForm = () => {
             password: data.get("password")
             
           }
-         dispatch(register(userData))
+         dispatch(login(userData))
     }
     return (
         <div className="">

@@ -6,7 +6,7 @@ import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import { useDispatch } from "react-redux";
 import { removeCartItem, updateCartItem } from "../../../Redux/Customer/Cart/Action";
 
-const CartItem = ({item}) => {
+const CartItem = ({item,showButton}) => {
 
   const dispatch = useDispatch();
   

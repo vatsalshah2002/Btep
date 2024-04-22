@@ -1,9 +1,9 @@
 import { Box, Modal } from "@mui/material";
 import React, { useEffect } from "react";
-import LoginForm from "./Login";
-import RegisterForm from "./Register";
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
+import LoginForm from "./LoginForm";
+import RegisterForm from "./RegisterForm";
 
 const style = {
     position: 'absolute',
@@ -37,7 +37,7 @@ const AuthModel = ({ handleClose, open }) => {
                     {location.pathname === "/login" ? (
                         <LoginForm />
                     ) : (
-                        <RegisterForm />
+                        <RegisterForm /> 
                     )}
                 </Box>
             </Modal>

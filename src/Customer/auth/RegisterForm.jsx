@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { Grid, TextField, Button, Snackbar, Alert, MenuItem, Select, InputLabel, FormControl } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getUser } from "../../Redux/Auth/Action";
-
+import { getUser, register } from "../../Redux/Auth/Action";
+import { useState } from "react";
 
 const RegisterForm = () => {
 

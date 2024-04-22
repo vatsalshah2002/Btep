@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { deepPurple } from "@mui/material/colors";
 import AuthModel from '../../auth/AuthModel';
 import { getCart } from '../../../Redux/Customer/Cart/Action';
-import { Avatar, Button, Menu, MenuItem } from "@mui/material";
+import { Avatar, Button, MenuItem } from "@mui/material";
 import { getUser, logout } from '../../../Redux/Auth/Action';
 
 
