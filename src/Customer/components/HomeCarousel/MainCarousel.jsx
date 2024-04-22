@@ -12,6 +12,7 @@ const MainCarousel = () => {
     className='cursor-pointer'    onClick={() => navigate(item.path)}
     role='presentation' src={item.image} alt=""
     onDragStart={handleDragStart}
+    
     />));
 
     return (
