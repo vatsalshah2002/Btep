@@ -434,12 +434,14 @@ export default function Product() {
                   {/* pagination section */}
         <section className="w-full px-[3.6rem]">
           <div className="mx-auto px-4 py-5 flex justify-center shadow-lg border rounded-md">
-            <Pagination
-              count={customersProduct.products?.totalPages}
+          {customersProduct.products ?(<Pagination
+              count={customersProduct.products.totalPages}
               color="primary"
               className=""
               onChange={handlePaginationChange}
             />
+            ):(<p>L</p>)
+          }
           </div>
         </section>
         
