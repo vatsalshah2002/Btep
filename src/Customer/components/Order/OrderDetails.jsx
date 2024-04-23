@@ -1,13 +1,13 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import React from "react";
-import OrderTraker from "./OrderTraker";
 import StarIcon from "@mui/icons-material/Star";
 import { useNavigate, useParams } from "react-router-dom";
-import AddressCard from "../adreess/AdreessCard";
 import { deepPurple } from "@mui/material/colors";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getOrderById } from "../../../Redux/Customers/Order/Action";
+import OrderTracker from "./OrderTracker";
+import AddressCard from "../AddressCard/AddressCard";
+import { getOrderById } from "../../../Redux/Customer/Order/Action";
 
 const OrderDetails = () => {
   const dispatch = useDispatch();
@@ -38,7 +38,7 @@ const OrderDetails = () => {
           sx={{ justifyContent: "space-between", alignItems: "center" }}
         >
           <Grid item xs={9}>
-            <OrderTraker
+            <OrderTracker
               activeStep={
                 order.order?.orderStatus === "PLACED"
                   ? 1
