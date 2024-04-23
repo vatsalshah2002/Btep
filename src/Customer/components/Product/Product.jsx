@@ -24,7 +24,7 @@ export default function Product() {
     const dispatch = useDispatch();
     const jwt = localStorage.getItem("jwt");
     const param = useParams();
-    const { customersProduct } = useSelector((store) => store);
+    const { product } = useSelector((store) => store);
     const location = useLocation();
     const [isLoaderOpen, setIsLoaderOpen] = useState(false);
 
@@ -122,12 +122,12 @@ export default function Product() {
     };
 
     useEffect(() => {
-        if (customersProduct && customersProduct.loading) {
+        if (product && product.loading) {
           setIsLoaderOpen(true);
         } else {
           setIsLoaderOpen(false);
         }
-      }, [customersProduct]);
+      }, [product]);
 
     return (
         <div className="bg-white -z-20 ">
@@ -422,7 +422,7 @@ export default function Product() {
 
 
                                 <div className='flex flex-wrap justify-center bg-white py-5 rounded-md'>
-                                {customersProduct?.products?.content?.map((item) => (
+                                {product?.products?.content?.map((item) => (
                       <ProductCard product={item} />
                     ))}
                                 </div>
@@ -435,7 +435,7 @@ export default function Product() {
         <section className="w-full px-[3.6rem]">
           <div className="mx-auto px-4 py-5 flex justify-center shadow-lg border rounded-md">
           (<Pagination
-              count={customersProduct.products.totalPages}
+              count={product.products.totalPages}
               color="primary"
               className=""
               onChange={handlePaginationChange}
