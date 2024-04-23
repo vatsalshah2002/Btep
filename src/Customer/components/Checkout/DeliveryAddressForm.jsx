@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { createOrder } from "../../../Redux/Customer/Order/Action";
 import { useState } from "react";
 
-const DeliveryAddressForm = () => {
+const DeliveryAddressForm = ({handleNext}) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const jwt = localStorage.getItem("jwt");

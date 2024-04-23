@@ -1,12 +1,12 @@
 import React from "react";
 import { Button } from "@mui/material";
 import CartItem from "../Cart/CartItem";
-import AddressCard from "../AddressCard/AdressCard";
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { createPayment } from "../../../Redux/Customer/Payment/Action";
 import { getOrderById } from "../../../Redux/Customer/Order/Action";
+import AddressCard from "../AddressCard/AddressCard";
 
 const OrderSummary = () => {
   const navigate = useNavigate();
@@ -26,6 +26,7 @@ const OrderSummary = () => {
     const data = { orderId: order.order?.id, jwt }
     dispatch(createPayment(data))
   }
+  
 
 
   return (

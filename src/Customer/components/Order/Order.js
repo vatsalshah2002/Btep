@@ -1,8 +1,9 @@
 import { Box, Grid } from "@mui/material";
-import React, { useEffect, useSyncExternalStore } from "react";
+import React, { useEffect } from "react";
 import OrderCard from "./OrderCard";
 import { useDispatch, useSelector } from "react-redux";
-import { getOrderHistory } from "../../../Redux/Customers/Order/Action";
+import { getOrderHistory } from "../../../Redux/Customer/Order/Action";
+
 
 const orderStatus = [
   { label: "On The Way", value: "onTheWay" },
@@ -16,7 +17,7 @@ const Order = () => {
   const jwt = localStorage.getItem("jwt");
   const {order}=useSelector(store=>store);
 
-  useEffect(() => {
+  useEffect(() => { 
     dispatch(getOrderHistory({ jwt }));
   }, [jwt]);
 
