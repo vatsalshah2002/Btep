@@ -24,7 +24,7 @@ export default function Product() {
     const dispatch = useDispatch();
     const jwt = localStorage.getItem("jwt");
     const param = useParams();
-    const { customersProduct } = useSelector((store) => store)
+    const { customersProduct } = useSelector((store) => store);
     const location = useLocation();
     const [isLoaderOpen, setIsLoaderOpen] = useState(false);
 
@@ -122,12 +122,12 @@ export default function Product() {
     };
 
     useEffect(() => {
-        if (customersProduct.loading) {
+        if (customersProduct && customersProduct.loading) {
           setIsLoaderOpen(true);
         } else {
           setIsLoaderOpen(false);
         }
-      }, [customersProduct.loading]);
+      }, [customersProduct]);
 
     return (
         <div className="bg-white -z-20 ">
