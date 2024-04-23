@@ -422,8 +422,8 @@ export default function Product() {
 
 
                                 <div className='flex flex-wrap justify-center bg-white py-5 rounded-md'>
-                                {product?.products?.content?.map((item) => (
-                      <ProductCard product={item} />
+                                {product?.products?.content?.map((item,index) => (
+                      <ProductCard key={index} product={item} />
                     ))}
                                 </div>
                             </div>
