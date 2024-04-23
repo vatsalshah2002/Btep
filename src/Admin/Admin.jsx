@@ -3,7 +3,6 @@ import { Box, CssBaseline, Divider, Drawer, List, ListItem, ListItemButton, List
 import { ListItemIcon, Toolbar, useMediaQuery } from "@mui/material";
 import React from "react";
 import { ThemeProvider } from "@emotion/react";
-import { useTheme } from "@mui/material/styles";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import MailIcon from "@mui/icons-material/Mail";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
@@ -17,6 +16,8 @@ import AdminNavbar from "./Navigation/AdminNavbar";
 import "./AdminPannel.css";
 import { customTheme } from "./Theme/customTheme";
 import DemoAdmin from "./DemoAdmin";
+
+const drawerWidth = 240;
 
 const menu = [
     { name: "Dashboard", path: "/admin" },

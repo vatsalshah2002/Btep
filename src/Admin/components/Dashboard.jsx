@@ -9,6 +9,8 @@ import Admin from "../Admin";
 import CardStatsVertical from "../../styles/CardStatsVertical";
 import SalesOverTime from "../tables/SalesOverTime";
 import { CurrencyUsd, HelpCircleOutline, Poll } from "mdi-material-ui";
+import { customTheme } from "../Theme/customTheme";
+import TotalEarning from "../tables/TotalEarning";
 
 const darkTheme1 = createTheme({
   palette: {
@@ -45,6 +47,7 @@ const Dashboard = () => {
             
             <Grid item xs={12} md={6} lg={4}>
               <TotalEarning />
+              
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
               <Grid container spacing={2}>

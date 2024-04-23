@@ -1,7 +1,8 @@
+import Admin from './Admin/Admin';
 import './App.css';
 
 import Navigation from './Customer/components/Navigation/Navigation';
-import Order from './Customer/components/Order/Order';
+//import Order from './Customer/components/Order/Order';
 //import HomePage from './Customer/pages/HomePage/HomePage';
 //import Product from './Customer/components/Product/Product';
 //import ProductDetails from './Customer/components/Product/ProductDetails';
@@ -16,10 +17,11 @@ function App() {
       <Navigation />
       <div>
         {/*<HomePage /> */}
+        <Admin/>
          {/*<Product/>*/} 
          {/*<Product Details/>*/} 
          {/*<ProductDetails/>*/}
-         <Order/>
+        {/* <Order/>*/} 
         {/*<Cart/>*/ } 
          {/*<Checkout/>*/} 
       </div>
