@@ -3,7 +3,8 @@ import axios from 'axios';
 //const DEPLOYED='https://e-commerce-server-production-0873.up.railway.app'
 const LOCALHOST='http://localhost:5454'
 
-export const API_BASE_URL = 'https://btep-backend-production.up.railway.app'
+export const API_BASE_URL = LOCALHOST
+//'https://btep-backend-production.up.railway.app'
 
 const api = axios.create({
   baseURL: API_BASE_URL,
