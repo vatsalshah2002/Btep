@@ -12,6 +12,7 @@ const PaymentSuccess = () => {
     const [referenceId, setReferenceId] = useState("");
     const [paymentStatus, setPaymentStatus] = useState("");
     const { orderId } = useParams();
+    const jwt = localStorage.getItem("jwt");
     const dispatch = useDispatch();
     const { order } = useSelector((store) => store);
 

@@ -3,7 +3,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 
 //import Cart from "../customer/Components/Cart/Cart";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { customTheme, customerTheme } from "../Admin/them/customeThem";
+
 import Navigation from "../Customer/components/Navigation/Navigation";
 import HomePage from "../Customer/pages/HomePage/HomePage";
 import About from "../Customer/pages/About";
@@ -17,6 +17,8 @@ import OrderDetails from "../Customer/components/Order/OrderDetails";
 import Checkout from "../Customer/components/Checkout/Checkout";
 import PaymentSuccess from "../Customer/Payment/PaymentSuccess";
 import RateProduct from "../Customer/reviewProduct/RateProduct";
+import { customerTheme } from "../Admin/Theme/customTheme";
+import Footer from "../Customer/components/footer/Footer";
 
 
 const CustomerRoutes = () => {
@@ -51,7 +53,7 @@ const CustomerRoutes = () => {
         <Route path="/payment/:orderId" element={<PaymentSuccess />}></Route>
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
-      <Footer />
+      <Footer /> 
     </ThemeProvider>
       
     </div>

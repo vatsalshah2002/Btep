@@ -1,7 +1,8 @@
 
+import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
-
-import Navigation from './Customer/components/Navigation/Navigation';
+import { Route, Routes } from 'react-router-dom';
+import CustomerRoutes from './Routers/CustomerRoutes';
 
 
 
@@ -15,22 +16,17 @@ import Navigation from './Customer/components/Navigation/Navigation';
 //import Checkout from './Customer/components/Checkout/Checkout';
 
 function App() {
+  const {auth}=useSelector(store=>store);
+  const dispatch = useDispatch();
+  const jwt = localStorage.getItem("jwt");
+  
   return (
     <div className="">
-      <Navigation />
-      <div>
-        {/*<HomePage /> */}
-      
-        
-         {/*<Product/>*/} 
-         {/*<Product Details/>*/} 
-         {/*<ProductDetails/>*/}
-        {/* <Order/>*/} 
-        {/*<Cart/>*/ } 
-         {/*<Checkout/>*/} 
-      </div>
+     <Routes>
+     <Route path="/*" element={<CustomerRoutes />} />
+     </Routes>
      
-      
+    
          </div>
   );
 }
