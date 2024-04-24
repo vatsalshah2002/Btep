@@ -10,9 +10,9 @@ const HomeSectionCarousel = ({data,sectionName}) => {
     
     const [activeIndex,setActiveIndex]=useState(0);
     const responsive = {
-        0: { items: 1 },
-        720: { items: 3 },
-        1024: { items: 5.5 },
+        0: { items: 1, itemsFit :"contain" },
+        568: { items: 3 , itemsFit :"contain" },
+        1024: { items: 5.5, itemsFit :"contain"  },
     };
 
     const slidePrev=()=>setActiveIndex(activeIndex-1);
@@ -20,12 +20,14 @@ const HomeSectionCarousel = ({data,sectionName}) => {
 
     const syncActiveIndex=({item})=>setActiveIndex(item);
     
-    const items = data.slice(0,10).map((item) => <HomeSectionCard product={item} />)
+    const items = data.slice(0,10).map((item) => <div>
+        <HomeSectionCard product={item} />
+    </div> )
 
     return (
-        <div className='border'>
+        <div className='relative px-4 sm:px-6 lg:px-8'>
         <h2 className='text-2xl font-extrabold text-gray-800 py-5'>{sectionName}</h2>
-            <div className='relative p-5'>
+            <div className='relative border p-5'>
                 <AliceCarousel
                     items={items}
                     disableButtonsControls
