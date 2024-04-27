@@ -1,5 +1,4 @@
 import {applyMiddleware, combineReducers, legacy_createStore} from "redux";
-import { configureStore } from "@reduxjs/toolkit";
 import {thunk} from "redux-thunk";
 import authReducer from "./Auth/Reducer";
 import customerProductReducer from "./Customer/Product/Reducer";
@@ -7,6 +6,7 @@ import cartReducer from "./Customer/Cart/Reducer";
 import { orderReducer } from "./Customer/Order/Reducer";
 import ReviewReducer from "./Customer/Review/Reducer";
 import adminOrderReducer from "./Admin/Order/Reducer";
+import productReducer from "./Admin/Product/Reducer";
 
 const rootReducers=combineReducers({
     auth:authReducer,
@@ -14,7 +14,10 @@ const rootReducers=combineReducers({
     cart:cartReducer,
     order:orderReducer,
     review:ReviewReducer,
-    adminOrder:adminOrderReducer
+    adminOrder:adminOrderReducer,
+
+    adminsProduct:productReducer,
+    adminsOrder:adminOrderReducer
 }); 
 
 export const store = legacy_createStore(rootReducers,applyMiddleware(thunk))
