@@ -18,7 +18,7 @@ const registerRequest = () => ({ type: REGISTER_REQUEST });
 const registerSuccess = (user) => ({ type: REGISTER_SUCCESS, payload:user });
 const registerFailure = error => ({ type: REGISTER_FAILURE, payload: error });
 
-export const register = userData => async dispatch => {
+export const register = (userData) => async (dispatch) => {
   dispatch(registerRequest());
   try {
     const response=await axios.post(`${API_BASE_URL}/auth/signup`, userData);
@@ -37,7 +37,7 @@ const loginRequest = () => ({ type: LOGIN_REQUEST });
 const loginSuccess = user => ({ type: LOGIN_SUCCESS, payload: user });
 const loginFailure = error => ({ type: LOGIN_FAILURE, payload: error });
 
-export const login = userData => async dispatch => {
+export const login = (userData) => async (dispatch) => {
   dispatch(loginRequest());
   try {
     const response = await axios.post(`${API_BASE_URL}/auth/signin`, userData);
