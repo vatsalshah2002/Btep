@@ -400,6 +400,7 @@ export default function Product() {
                               >
                                 {section.options.map((option, optionIdx) => (
                                   <FormControlLabel
+                                  key={option.value}
                                     value={option.value}
                                     control={<Radio />}
                                     label={option.label}
